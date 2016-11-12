@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: com.vaynberg.wicket.select2:wicket-select2:2.5-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaynberg/wicket/select2/wicket-select2/2.5-SNAPSHOT/wicket-select2-2.5-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/wicket-select2/wicket-select2-2.5-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaynberg/wicket/select2/wicket-select2/2.5-SNAPSHOT/wicket-select2-2.5-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/wicket-select2/wicket-select2-2.5-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/vaynberg/wicket/select2/wicket-select2/2.5-SNAPSHOT/wicket-select2-2.5-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

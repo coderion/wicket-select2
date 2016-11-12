@@ -15,6 +15,7 @@ package com.vaynberg.wicket.select2;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
@@ -51,4 +52,30 @@ public class Select2ResourcesBehavior extends Behavior {
 	}
     }
 
+//	@Override
+//	public void onComponentTag(Component component, ComponentTag tag) {
+//		super.onComponentTag(component, tag);
+//		CharSequence callBackURL = getCallbackUrl();
+//		String separatorChar = (callBackURL.toString().indexOf('?') > -1 ? "&" : "?");
+//
+//		String finalScript = "var isSelect = $(this).is('select');n" +
+//				"var component;n" +
+//				"if(isSelect)n" +
+//				"	component = $(this);n" +
+//				"else n" +
+//				"	component = $(this).find('input:radio:checked');n" +
+//				"window.location.href='" + callBackURL +  separatorChar +
+//				"choiceId=' + " + "component.val()";
+//
+//		tag.put("onchange", finalScript);
+//	}
+//
+//	public CharSequence getCallbackUrl() {
+//		if (boundComponent == null) {
+//			throw new IllegalArgumentException(
+//					"Behavior must be bound to a component to create the URL");
+//		}
+//
+//		return boundComponent.urlForListener(this, new PageParameters());
+//	}
 }

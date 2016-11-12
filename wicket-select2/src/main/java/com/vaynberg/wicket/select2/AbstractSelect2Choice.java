@@ -15,8 +15,8 @@ package com.vaynberg.wicket.select2;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import org.apache.wicket.IResourceListener;
-import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.IRequestListener;
+import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.IRequestParameters;
 import org.apache.wicket.request.Request;
@@ -34,7 +34,7 @@ import org.json.JSONWriter;
  * @param <M>
  *            type of model object
  */
-abstract class AbstractSelect2Choice<T, M> extends Select2ChoiceBaseComponent<M> implements IResourceListener {
+public abstract class AbstractSelect2Choice<T, M> extends Select2ChoiceBaseComponent<M> implements IRequestListener {
 
     private ChoiceProvider<T> provider;
 
@@ -114,13 +114,41 @@ abstract class AbstractSelect2Choice<T, M> extends Select2ChoiceBaseComponent<M>
     protected void onConfigure() {
 	super.onConfigure();
 
-	getSettings().getAjax().setUrl(urlFor(IResourceListener.INTERFACE, null));
+		//set correct ajax data url
+	//getSettings().getAjax().setUrl(urlFor(null));
+		getSettings().getAjax().setUrl(this.urlForListener(null));
+
     }
 
-   
+//	@Override
+//	protected void onComponentTag(ComponentTag tag) {
+//		super.onComponentTag(tag);
+//		CharSequence callBackURL = getCallbackUrl();
+//		String separatorChar = (callBackURL.toString().indexOf('?') > -1 ? "&" : "?");
+//
+//		String finalScript = "var isSelect = $(this).is('select');n" +
+//				"var component;n" +
+//				"if(isSelect)n" +
+//				"	component = $(this);n" +
+//				"else n" +
+//				"	component = $(this).find('input:radio:checked');n" +
+//				"window.location.href='" + callBackURL +  separatorChar +
+//				"choiceId=' + " + "component.val()";
+//
+//		tag.put("onchange", finalScript);
+//	}
+//
+//	public CharSequence getCallbackUrl() {
+//		if (boundComponent == null) {
+//			throw new IllegalArgumentException(
+//					"Behavior must be bound to a component to create the URL");
+//		}
+//
+//		return boundComponent.urlForListener(this, new PageParameters());
+//	}
 
-    @Override
-    public void onResourceRequested() {
+	@Override
+    public void onRequest() {
 
 	// this is the callback that retrieves matching choices used to populate the dropdown
 

@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.vaynberg.wicket.select2</groupId>
 	<artifactId>wicket-select2-parent</artifactId>
-	<version>2.5-SNAPSHOT</version>
+	<version>8.0.0-M2</version>
 	<packaging>pom</packaging>
 	<name>Wicket-Select2 Parent</name>
 	<description>Library for integrating Apache Wicket with CDI</description>
@@ -20,12 +20,12 @@
 			<comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
-	<scm>
-		<connection>scm:git:https://github.com/ivaynberg/wicket-select2.git</connection>
-		<developerConnection>scm:git:https://github.com/ivaynberg/wicket-select2.git</developerConnection>
-		<url>git@github.com/ivaynberg/wicket-select2.git</url>
-		<tag>2.4</tag>
-	</scm>
+	<!--<scm>-->
+		<!--<connection>scm:git:https://github.com/ivaynberg/wicket-select2.git</connection>-->
+		<!--<developerConnection>scm:git:https://github.com/ivaynberg/wicket-select2.git</developerConnection>-->
+		<!--<url>git@github.com/ivaynberg/wicket-select2.git</url>-->
+		<!--<tag>2.4</tag>-->
+	<!--</scm>-->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
