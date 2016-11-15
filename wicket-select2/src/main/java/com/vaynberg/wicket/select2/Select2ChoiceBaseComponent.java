@@ -123,7 +123,7 @@ public abstract class Select2ChoiceBaseComponent<M> extends HiddenField<M> {
 
 	if (target != null) {
 	    // ensure the select2 is closed so we do not leave an orphaned dropdown component in the dom
-	    target.prependJavaScript(String.format("$('#%s').select2('close');", getJquerySafeMarkupId()));
+	    //target.prependJavaScript(String.format("$('#%s').select2('close');", getJquerySafeMarkupId()));
 	}
 
     }
