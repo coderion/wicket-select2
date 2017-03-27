@@ -12,11 +12,11 @@
  */
 package com.vaynberg.wicket.select2;
 
-import java.util.Collection;
-
 import org.apache.wicket.model.IDetachable;
 import org.json.JSONException;
-import org.json.JSONWriter;
+import org.json.JSONStringer;
+
+import java.util.Collection;
 
 /**
  * <p>
@@ -33,16 +33,16 @@ import org.json.JSONWriter;
  * <p>
  * For the most common usecase where each choice is rendered as a text string see {@link TextChoiceProvider}.
  * </p>
- * 
+ *
  * @author igor
- * 
+ *
  * @param <T>
  *            type of choice object
  */
 public abstract class ChoiceProvider<T> implements IDetachable {
     /**
      * Queries application for choices that match the search {@code term} and adds them to the {@code response}
-     * 
+     *
      * @param term
      *            search term
      * @param page
@@ -54,36 +54,36 @@ public abstract class ChoiceProvider<T> implements IDetachable {
 
     /**
      * Converts the specified choice to Json.
-     * 
+     *
      * <p>
      * At the very least each choice should contain an {@code id} attribute. If no custom rendering function is
      * specified, the {@code text} attribute should also be provided
      * </p>
-     * 
+     *
      * <p>
      * Example: If mapping a User {Long id, String name} using default rendering the code should look like this:
-     * 
+     *
      * <pre>
      * toJson(User choice, JSONWriter writer) {
      *     writer.key(&quot;id&quot;).value(choice.getId()).key(&quot;text&quot;).value(choice.getName());
      * }
      * </pre>
-     * 
+     *
      * </p>
-     * 
+     *
      * @param choice
      *            choice to convert
      * @param writer
      *            Json writer that should be used to covnert the choice
      * @throws JSONException
      */
-    public abstract void toJson(T choice, JSONWriter writer) throws JSONException;
+    public abstract void toJson(T choice, JSONStringer writer) throws JSONException;
 
     /**
      * Converts a list of choice ids back into application's choice objects. When the choice provider is attached to a
      * single-select component the {@code ids} collection will contain exactly one id, and a collection containing
      * exactly one choice should be returned.
-     * 
+     *
      * @param ids
      *            collection containing choice ids
      * @return collection containing application choice objects

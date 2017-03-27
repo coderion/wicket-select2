@@ -15,7 +15,6 @@ package com.vaynberg.wicket.select2;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
-import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
@@ -24,33 +23,37 @@ import org.apache.wicket.markup.head.JavaScriptHeaderItem;
  * Adds various resources needed by Select2 such as JavaScript and CSS. Which resources are added is controlled by the
  * {@link ApplicationSettings} object. Minified versions of JavaScript resources will be used when the application is
  * configured in deployment mode.
- * 
+ *
  * @author igor
- * 
+ *
  */
 public class Select2ResourcesBehavior extends Behavior {
 
-    @Override
-    public void renderHead(Component component, IHeaderResponse response) {
+	@Override
+	public void renderHead(Component component, IHeaderResponse response) {
 
-	final ApplicationSettings settings = ApplicationSettings.get();
+		try {
+			final ApplicationSettings settings = ApplicationSettings.get();
 
-	// Include Wicket's provided jQuery reference
-	response.render(JavaScriptHeaderItem.forReference(Application.get().getJavaScriptLibrarySettings()
-		.getJQueryReference()));
+			// Include Wicket's provided jQuery reference
+			response.render(JavaScriptHeaderItem.forReference(Application.get().getJavaScriptLibrarySettings()
+					.getJQueryReference()));
 
-	if (settings.isIncludeMouseWheel()) {
-	    response.render(JavaScriptHeaderItem.forReference(settings.getMouseWheelReference()));
+			if (settings.isIncludeMouseWheel()) {
+				response.render(JavaScriptHeaderItem.forReference(settings.getMouseWheelReference()));
+			}
+
+			if (settings.isIncludeJavascript()) {
+				response.render(JavaScriptHeaderItem.forReference(settings.getJavaScriptReference()));
+			}
+
+			if (settings.isIncludeCss()) {
+				response.render(CssHeaderItem.forReference(settings.getCssReference()));
+			}
+		} catch (Exception en) {
+			throw new RuntimeException(en);
+		}
 	}
-
-	if (settings.isIncludeJavascript()) {
-	    response.render(JavaScriptHeaderItem.forReference(settings.getJavaScriptReference()));
-	}
-
-	if (settings.isIncludeCss()) {
-	    response.render(CssHeaderItem.forReference(settings.getCssReference()));
-	}
-    }
 
 //	@Override
 //	public void onComponentTag(Component component, ComponentTag tag) {
