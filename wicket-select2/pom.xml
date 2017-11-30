@@ -4,14 +4,15 @@
 	<parent>
 		<artifactId>wicket-select2-parent</artifactId>
 		<groupId>com.vaynberg.wicket.select2</groupId>
-		<version>8.0.0-M4</version>
+		<version>8.0.0-M7</version>
 	</parent>
 	<groupId>com.vaynberg.wicket.select2</groupId>
 	<artifactId>wicket-select2</artifactId>
-	<version>8.0.0-M4</version>
+	<version>${wicket.version}</version>
 	<name>Wicket-Select2 Components</name>
 	<description>Bridges Apache Wicket with Select2 components</description>
 	<url>https://github.com/ivaynberg/wicket-select2</url>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -19,9 +20,11 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.tdunning</groupId>
@@ -34,7 +37,7 @@
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-core</artifactId>
-			<version>8.0.0-M4</version>
+			<version>${wicket.version}</version>
 		</dependency>
 
 		<dependency>
