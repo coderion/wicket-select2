@@ -29,9 +29,7 @@
 		<dependency>
 			<groupId>com.tdunning</groupId>
 			<artifactId>json</artifactId>
-			<version>1.8-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/resources/json-1.8-SNAPSHOT.jar</systemPath>
+			<version>1.8</version>
 		</dependency>
 
 		<dependency>
