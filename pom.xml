@@ -34,29 +34,28 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<wicket.version>8.0.0-M7</wicket.version>
 
-		<coderion-releases.url>http://nexus.coderion.pl/nexus/content/repositories/coderion-releases</coderion-releases.url>
-		<coderion-public-snapshots.url>http://nexus.coderion.pl/nexus/content/repositories/snapshots</coderion-public-snapshots.url>
-		<coderion-public-releases.url>http://nexus.coderion.pl/nexus/content/repositories/releases</coderion-public-releases.url>
+		<coderion-releases.url>http://nexus.coderion.pl/repository/coderion-releases</coderion-releases.url>
+		<coderion-snapshots.url>http://nexus.coderion.pl/repository/coderion-snapshots</coderion-snapshots.url>
 	</properties>
 
 	<!-- Coderion Nexus -->
 	<distributionManagement>
 		<snapshotRepository>
-			<id>deployment</id>
-			<name>Coderion Public Snapshots</name>
-			<url>http://nexus.coderion.pl/nexus/content/repositories/snapshots</url>
+			<id>coderion-snapshots</id>
+			<name>Coderion Snapshots</name>
+			<url>http://nexus.coderion.pl/repository/coderion-snapshots</url>
 		</snapshotRepository>
 		<repository>
-			<id>deployment</id>
+			<id>coderion-releases</id>
 			<name>Coderion Releases</name>
-			<url>http://nexus.coderion.pl/nexus/content/repositories/coderion-releases</url>
+			<url>http://nexus.coderion.pl/repository/coderion-releases</url>
 		</repository>
 	</distributionManagement>
 
 	<repositories>
 		<repository>
 			<id>coderion-public-snapshots</id>
-			<url>${coderion-public-snapshots.url}</url>
+			<url>${coderion-snapshots.url}</url>
 			<snapshots>
 				<updatePolicy>interval:15</updatePolicy>
 			</snapshots>
@@ -64,13 +63,6 @@
 		<repository>
 			<id>coderion-releases</id>
 			<url>${coderion-releases.url}</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>coderion-public-releases</id>
-			<url>${coderion-public-releases.url}</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
