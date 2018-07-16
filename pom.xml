@@ -11,7 +11,7 @@
 
 	<groupId>com.vaynberg.wicket.select2</groupId>
 	<artifactId>wicket-select2-parent</artifactId>
-	<version>8.0.0-M7</version>
+	<version>8.0.0</version>
 	<packaging>pom</packaging>
 	<name>Wicket-Select2 Parent</name>
 	<description>Library for integrating Apache Wicket with CDI</description>
@@ -32,7 +32,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<wicket.version>8.0.0-M7</wicket.version>
+		<wicket.version>8.0.0</wicket.version>
 
 		<coderion-releases.url>http://nexus.coderion.pl/repository/coderion-releases</coderion-releases.url>
 		<coderion-snapshots.url>http://nexus.coderion.pl/repository/coderion-snapshots</coderion-snapshots.url>
