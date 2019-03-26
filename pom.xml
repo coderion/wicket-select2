@@ -34,8 +34,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<wicket.version>8.0.0</wicket.version>
 
-		<coderion-releases.url>http://nexus.coderion.pl/repository/coderion-releases</coderion-releases.url>
-		<coderion-snapshots.url>http://nexus.coderion.pl/repository/coderion-snapshots</coderion-snapshots.url>
+		<coderion-releases.url>http://nexus.coderion.pl/repository/maven-releases/</coderion-releases.url>
+		<coderion-snapshots.url>http://nexus.coderion.pl/repository/maven-snapshots</coderion-snapshots.url>
 	</properties>
 
 	<!-- Coderion Nexus -->
@@ -43,12 +43,12 @@
 		<snapshotRepository>
 			<id>coderion-snapshots</id>
 			<name>Coderion Snapshots</name>
-			<url>http://nexus.coderion.pl/repository/coderion-snapshots</url>
+			<url>http://nexus.coderion.pl/repository/maven-snapshots/</url>
 		</snapshotRepository>
 		<repository>
 			<id>coderion-releases</id>
 			<name>Coderion Releases</name>
-			<url>http://nexus.coderion.pl/repository/coderion-releases</url>
+			<url>http://nexus.coderion.pl/repository/maven-releases/</url>
 		</repository>
 	</distributionManagement>
 
